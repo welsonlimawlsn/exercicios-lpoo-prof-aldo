@@ -1,0 +1,5 @@
+1 – Receber o diâmetro da lata
+2 – Receber a altura da lata
+3 – Dividir o diâmetro por 2 para obter o raio
+4 – Multiplicar o quadrado do raio pelo PI, e depois multiplicar esse resultado pela altura para obter o volume da lata
+5 – Apresentar o volume da lata
