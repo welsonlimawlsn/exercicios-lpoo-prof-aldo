@@ -16,7 +16,7 @@ Inicio
       se peso < 60 entao
          escreva("A")
       senao
-         se peso >= 60 e peso <=90 entao
+         se peso <= 90 entao
             escreva("D")
          senao
             escreva("G")
@@ -27,7 +27,7 @@ Inicio
          se peso < 60 entao
             escreva("B")
          senao
-            se peso <=90 entao
+            se peso <= 90 entao
                escreva("E")
             senao
                escreva("H")
