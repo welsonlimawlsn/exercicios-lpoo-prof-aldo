@@ -1,0 +1,2 @@
+1 - Receber o número
+2 - Verificar se o resto da divisão do numero por 2 é igual a 0, se sim mostrar que é par, se não mostrar que é impar

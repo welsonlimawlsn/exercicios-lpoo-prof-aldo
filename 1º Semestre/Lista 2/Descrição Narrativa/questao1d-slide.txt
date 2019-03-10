@@ -1,0 +1,5 @@
+1 - Receber a altura
+2 - Receber o peso
+3 - Se a altura for menor que 1,20, mostrar A, D ou G, se o peso for ate 60, entre 60 e 90 (inclusive) ou acima de 90, respectivamente;
+4 - Se não, Se a altura ficar entre 1,20 e 1,70, mostrar B, E ou H, se o peso for ate 60, entre 60 e 90 (inclusive) ou acima de 90, respectivamente;
+5 - Se a altura for maior que 1,70, mostrar C, F ou I, se o peso for ate 60, entre 60 e 90 (inclusive) ou acima de 90, respectivamente;

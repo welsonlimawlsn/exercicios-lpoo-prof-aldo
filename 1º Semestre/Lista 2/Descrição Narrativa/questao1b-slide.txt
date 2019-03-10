@@ -1,0 +1,7 @@
+1 - Receber o primeiro número
+2 - Receber o segundo número
+3 - Receber o terceiro número
+4 - Se o primeiro número for maior que o segundo, trocar os dois de lugar
+5 - Se o segundo for maior que o terceiro, trocar eles de lugar
+6 - Verificar novamente se o primeiro é maior que o sengundo, caso seja trocar novamente
+7 - Mostrar o primeiro, o segundo e o terceiro, nesta ordem

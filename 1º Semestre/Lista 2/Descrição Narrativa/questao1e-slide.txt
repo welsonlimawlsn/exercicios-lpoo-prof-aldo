@@ -1,0 +1,9 @@
+1 - Receber a nota do trabalho de laboratorio
+2 - Receber a nota da avaliação semestral
+3 - Receber a nota do exame final
+4 - Calcular a média entre as notas
+5 - Se menor que 5, mostrar o conceito E
+5 - Se estiver entre 5 e 6, mostrar o conceito D
+5 - Se estiver entre 6 e 7, mostrar o conceito C
+5 - Se estiver entre 7 e 8, mostrar o conceito B
+5 - Se estiver entre 8 e 10, mostrar o conceito A
