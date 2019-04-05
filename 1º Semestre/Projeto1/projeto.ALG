@@ -76,21 +76,55 @@ var
 inicio
    escreva("Digite um numero: ")
    leia(numeroUsuario)
-   
+
    para numeroAtual de 1 ate numeroUsuario faca
       quantidadeDivisores <- 0
-      
+
       para divisor de 1 ate numeroAtual faca
          se numeroAtual mod divisor = 0 entao
             quantidadeDivisores <- quantidadeDivisores + 1
          fimse
       fimpara
-      
+
       se quantidadeDivisores = 2 entao
          somaPrimos <- somaPrimos + numeroAtual
       fimse
    fimpara
    escreva("A soma de primos de ", 1, " até ", numeroUsuario, " é igual a ", somaPrimos)
+fimprocedimento
+
+procedimento maiorMenorMedia
+var
+   maior, menor, soma, numeroAtual: real
+   quantidadeNumeros, contador: inteiro
+inicio
+   escreva("Digite a quantidade de números que deseja informar: ")
+   leia(quantidadeNumeros)
+
+   para contador de 1 ate quantidadeNumeros faca
+      escreva("Digite o ", contador, "º número: ")
+      leia(numeroAtual)
+
+      se contador = 1 entao
+         maior <- numeroAtual
+         menor <- numeroAtual
+      senao
+         se numeroAtual > maior entao
+            maior <- numeroAtual
+         fimse
+
+         se numeroAtual < menor entao
+            menor <- numeroAtual
+         fimse
+      fimse
+
+      soma <- soma + numeroAtual
+   fimpara
+   
+   escreval("Maior: ", maior)
+   escreval("Menor: ", menor)
+   escreval("Média: ", soma / quantidadeNumeros)
+
 fimprocedimento
 
 funcao ehMasculino (sexo: caractere):logico
@@ -104,5 +138,5 @@ inicio
 fimfuncao
 Inicio
 
-   numerosPrimos
+   maiorMenorMedia
 Fimalgoritmo
