@@ -27,7 +27,59 @@ inicio
       escreva("O divisor tem que ser diferente de 0!")
    fimse
 fimprocedimento
+
+procedimento faixaEtaria
+var
+   totalPessoas, totalFeminino, totalMasculino, totalIdadeFeminino, totalIdadeMasculina, contador, idadePessoaAtual: inteiro
+   sexoPessoaAtual: caractere
+inicio
+   escreva("Digite a quantidade de pessoas que deseja inserir: ")
+   leia(totalPessoas)
+
+   enquanto contador < totalPessoas faca
+      escreva("Digite o sexo da pessoa ([M - Masculino][F - Feminino]): ")
+      leia(sexoPessoaAtual)
+
+      se ehMasculino(sexoPessoaAtual) ou ehFeminino(sexoPessoaAtual) entao
+
+         repita
+            escreva("Digite a idade: ")
+            leia(idadePessoaAtual)
+
+            se idadePessoaAtual < 0 entao
+               escreval("Idade Invalida")
+            fimse
+         ate idadePessoaAtual >= 0
+
+         se ehMasculino(sexoPessoaAtual) entao
+            totalMasculino <- totalMasculino + 1
+            totalIdadeMasculina <- totalIdadeMasculina + idadePessoaAtual
+         senao
+            totalFeminino <- totalFeminino + 1
+            totalIdadeFeminino <- totalIdadeFeminino + idadePessoaAtual
+         fimse
+
+         contador <- contador + 1
+      senao
+         escreval("Sexo Invalido")
+      fimse
+   fimenquanto
+
+   escreval("Media de idade: ", (totalIdadeFeminino + totalIdadeMasculina) / totalPessoas)
+   escreval("Média de idade feminina: ", totalIdadeFeminino / totalFeminino)
+   escreval("Média de idade masculino: ", totalIdadeMasculina / totalMasculino)
+fimprocedimento
+
+funcao ehMasculino (sexo: caractere):logico
+inicio
+   retorne (sexo = "M") ou (sexo = "m")
+fimfuncao
+
+funcao ehFeminino (sexo: caractere):logico
+inicio
+   retorne (sexo = "F") ou (sexo = "f")
+fimfuncao
 Inicio
 
-   divisao
+   faixaEtaria
 Fimalgoritmo
