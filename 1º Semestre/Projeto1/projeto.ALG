@@ -70,6 +70,29 @@ inicio
    escreval("Média de idade masculino: ", totalIdadeMasculina / totalMasculino)
 fimprocedimento
 
+procedimento numerosPrimos
+var
+   numeroUsuario, somaPrimos, numeroAtual, quantidadeDivisores, divisor: inteiro
+inicio
+   escreva("Digite um numero: ")
+   leia(numeroUsuario)
+   
+   para numeroAtual de 1 ate numeroUsuario faca
+      quantidadeDivisores <- 0
+      
+      para divisor de 1 ate numeroAtual faca
+         se numeroAtual mod divisor = 0 entao
+            quantidadeDivisores <- quantidadeDivisores + 1
+         fimse
+      fimpara
+      
+      se quantidadeDivisores = 2 entao
+         somaPrimos <- somaPrimos + numeroAtual
+      fimse
+   fimpara
+   escreva("A soma de primos de ", 1, " até ", numeroUsuario, " é igual a ", somaPrimos)
+fimprocedimento
+
 funcao ehMasculino (sexo: caractere):logico
 inicio
    retorne (sexo = "M") ou (sexo = "m")
@@ -81,5 +104,5 @@ inicio
 fimfuncao
 Inicio
 
-   faixaEtaria
+   numerosPrimos
 Fimalgoritmo
