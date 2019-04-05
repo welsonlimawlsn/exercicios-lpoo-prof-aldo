@@ -120,23 +120,73 @@ inicio
 
       soma <- soma + numeroAtual
    fimpara
-   
+
    escreval("Maior: ", maior)
    escreval("Menor: ", menor)
    escreval("Média: ", soma / quantidadeNumeros)
 
 fimprocedimento
 
-funcao ehMasculino (sexo: caractere):logico
+procedimento codigoMorse
+var
+   numero: inteiro
+inicio
+
+   repita
+      escreva("Digite um número de 0 a 20: ")
+      leia(numero)
+      se (numero >= 0) e (numero <= 20) entao
+         se numero < 10 entao
+            escreval(converteNumeroParaMorse(numero))
+         senao
+            se (numero = 10) ou (numero = 20) entao
+               escreval(converteNumeroParaMorse(numero / 10), converteNumeroParaMorse(0))
+            senao
+               escreval(converteNumeroParaMorse(1), converteNumeroParaMorse(numero - 10))
+            fimse
+         fimse
+      fimse
+   ate (numero >= 0) e (numero <= 20)
+
+fimprocedimento
+
+funcao ehMasculino (sexo: caractere): logico
 inicio
    retorne (sexo = "M") ou (sexo = "m")
 fimfuncao
 
-funcao ehFeminino (sexo: caractere):logico
+funcao ehFeminino (sexo: caractere): logico
 inicio
    retorne (sexo = "F") ou (sexo = "f")
 fimfuncao
+
+funcao converteNumeroParaMorse (numero: inteiro): caractere
+inicio
+   escolha numero
+   caso 0
+      retorne "----- "
+   caso 1
+      retorne ".---- "
+   caso 2
+      retorne "..--- "
+   caso 3
+      retorne "...-- "
+   caso 4
+      retorne "....- "
+   caso 5
+      retorne "..... "
+   caso 6
+      retorne "-.... "
+   caso 7
+      retorne "--... "
+   caso 8
+      retorne "---.. "
+   caso 9
+      retorne "----. "
+   fimescolha
+fimfuncao
+
 Inicio
 
-   maiorMenorMedia
+   codigoMorse
 Fimalgoritmo
