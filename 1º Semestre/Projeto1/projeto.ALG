@@ -146,6 +146,35 @@ inicio
 
 fimprocedimento
 
+procedimento mudancaDeBase
+var
+   numero: caractere
+   quantidadeNumeros, i: inteiro
+inicio
+   escreva("Digite a quantidade de números que desaja converter: ")
+   leia(quantidadeNumeros)
+
+   escreval("Digite o numero e especifique a base.")
+   escreval("Ex: 100110B - Numero binario; 56D - Numero decimal.")
+
+   enquanto i < quantidadeNumeros faca
+      escreva("Digite o ", i + 1, "º número: ")
+      leia(numero)
+
+      se ehBinario(numero) entao
+         escreval(converteBinarioParaDecimal(copia(numero, 1, compr(numero) - 1)))
+      senao
+         se ehDecimal(numero) entao
+            escreval(converteDecimalParaBinario(caracpnum(copia(numero, 1, compr(numero) - 1))))
+         senao
+            escreval("Tipo de número invalido! ")
+            i <- i - 1
+         fimse
+      fimse
+      i <- i + 1
+   fimenquanto
+fimprocedimento
+
 funcao ehMasculino (sexo: caractere): logico
 inicio
    retorne (sexo = "M") ou (sexo = "m")
@@ -154,6 +183,16 @@ fimfuncao
 funcao ehFeminino (sexo: caractere): logico
 inicio
    retorne (sexo = "F") ou (sexo = "f")
+fimfuncao
+
+funcao ehBinario(numero: caractere): logico
+inicio
+   retorne minusc(copia(numero, compr(numero), compr(numero))) = "b"
+fimfuncao
+
+funcao ehDecimal(numero: caractere): logico
+inicio
+   retorne minusc(copia(numero, compr(numero), compr(numero))) = "d"
 fimfuncao
 
 funcao converteNumeroParaMorse (numero: caractere): caractere
@@ -182,7 +221,34 @@ inicio
    fimescolha
 fimfuncao
 
+funcao converteDecimalParaBinario(decimal: real): caractere
+var
+   binario: caractere
+   restoDivisao: inteiro
+inicio
+   enquanto decimal > 1 faca
+      restoDivisao <- decimal mod 2
+      binario <- numpcarac(restoDivisao) + binario
+      decimal <- (decimal - restoDivisao) / 2
+   fimenquanto
+   retorne numpcarac(decimal) + binario
+fimfuncao
+
+funcao converteBinarioParaDecimal(binario: caractere): real
+var
+   i, ii: inteiro
+   decimal: real
+inicio
+   ii <- compr(binario)
+   enquanto i < compr(binario) faca
+      decimal <- decimal + caracpnum(copia(binario, ii, 1)) * exp(2, i)
+      i <- i + 1
+      ii <- ii - 1
+   fimenquanto
+   retorne decimal
+fimfuncao
+
 Inicio
 
-   codigoMorse
+   mudancaDeBase
 Fimalgoritmo
