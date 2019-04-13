@@ -40,8 +40,11 @@ inicio
       escreva("Digite o sexo da pessoa ([M - Masculino][F - Feminino]): ")
       leia(sexoPessoaAtual)
 
+
+      // VERIFICA SE A PESSOA DIGITOU O SEXO CORRETAMENTE
       se ehMasculino(sexoPessoaAtual) ou ehFeminino(sexoPessoaAtual) entao
 
+         // FICA REPETINDO ENQUANTO O USUARIO NÃO DIGITAR UMA IDADE VALIDA
          repita
             escreva("Digite a idade: ")
             leia(idadePessoaAtual)
@@ -81,11 +84,13 @@ inicio
       quantidadeDivisores <- 0
 
       para divisor de 1 ate numeroAtual faca
+         // VERIFICA SE O DETERMINADO NUMERO DIVIDO POR DETERMINADO DIVISOR RESTA UMA DIVISÃO INTEIRA
          se numeroAtual mod divisor = 0 entao
             quantidadeDivisores <- quantidadeDivisores + 1
          fimse
       fimpara
 
+      // VERIFICA SE O NUMERO É PRIMO VENDO A QUANTIDADE DE DIVISORES
       se quantidadeDivisores = 2 entao
          somaPrimos <- somaPrimos + numeroAtual
       fimse
@@ -133,9 +138,11 @@ var
    numeroCaractere: caractere
 inicio
 
+   // REPETE ATE QUE O USUARIO DIGITE UM NUMERO DE 0 A 20
    repita
       escreva("Digite um número de 0 a 20: ")
       leia(numero)
+      // VALIDA SE O USUARIO ENTROU COM UM NUMERO ENTRE 0 E 20
       se (numero >= 0) e (numero <= 20) entao
          numeroCaractere <- numpcarac(numero)
          para i de 1 ate compr(numeroCaractere) faca
@@ -161,10 +168,10 @@ inicio
       escreva("Digite o ", i + 1, "º número: ")
       leia(numero)
 
-      se ehBinario(numero) entao
+      se ehBinario(numero) entao             // ESSA PARTE TIRA A LETRA NO FINAL DA ENTRADA DO USUARIO
          escreval(converteBinarioParaDecimal(copia(numero, 1, compr(numero) - 1)))
       senao
-         se ehDecimal(numero) entao
+         se ehDecimal(numero) entao                       // ESSA PARTE TIRA A LETRA NO FINAL DA ENTRADA DO USUARIO
             escreval(converteDecimalParaBinario(caracpnum(copia(numero, 1, compr(numero) - 1))))
          senao
             escreval("Tipo de número invalido! ")
@@ -186,12 +193,12 @@ inicio
 fimfuncao
 
 funcao ehBinario(numero: caractere): logico
-inicio
+inicio      // PEGA A PARTE DA LETRA E COMPARA COM B
    retorne (minusc(copia(numero, compr(numero), 1)) = "b") e binarioEhValido(copia(numero, 1, compr(numero) - 1))
 fimfuncao
 
 funcao ehDecimal(numero: caractere): logico
-inicio
+inicio     // PEGA A PARTE DA LETRA E COMPARA COM B
    retorne minusc(copia(numero, compr(numero), 1)) = "d"
 fimfuncao
 
@@ -240,6 +247,7 @@ var
    decimal: real
 inicio
    ii <- compr(binario)
+   // VARRE TODOS OS CARACTERES DO NUMERO BINARIO E CONVERTE PARA BINARIO
    enquanto i < compr(binario) faca
       decimal <- decimal + caracpnum(copia(binario, ii, 1)) * exp(2, i)
       i <- i + 1
@@ -255,6 +263,7 @@ var
 inicio
    temNumeroSoBinario <- verdadeiro
    para i de 1 ate compr(binario) faca
+      // VERIFICA SE O USUARIO DIGITOU SOMENTE 0 E 1
       se nao((copia(binario, i, 1) = "1") ou (copia(binario, i, 1) = "0")) entao
          temNumeroSoBinario <- falso
       fimse
@@ -266,8 +275,8 @@ opcao: inteiro
 Inicio
 
    repita
-   escreval
-   escreval
+      escreval
+      escreval
       escreval("=============MENU=============")
       escreval("[1] - Divisão")
       escreval("[2] - Faixa Etária")
