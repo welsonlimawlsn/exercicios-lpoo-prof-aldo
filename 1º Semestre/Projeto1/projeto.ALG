@@ -262,7 +262,42 @@ inicio
    retorne temNumeroSoBinario
 fimfuncao
 
+opcao: inteiro
 Inicio
 
-   mudancaDeBase
+   repita
+   escreval
+   escreval
+      escreval("=============MENU=============")
+      escreval("[1] - Divisão")
+      escreval("[2] - Faixa Etária")
+      escreval("[3] - Números Primos")
+      escreval("[4] - Retornar o Maior, Menor e Média")
+      escreval("[5] - Código Morse")
+      escreval("[6] - Mudança de Base")
+      escreval("[7] - Sair")
+      escreval("=============MENU=============")
+      escreva("Escolha uma opção: ")
+      leia(opcao)
+      escreval
+      escreval
+      escolha opcao
+      caso 1
+         divisao
+      caso 2
+         faixaEtaria
+      caso 3
+         numerosPrimos
+      caso 4
+         maiorMenorMedia
+      caso 5
+         codigoMorse
+      caso 6
+         mudancaDeBase
+      caso 7
+         escreval("Saindo do programa...")
+      outrocaso
+         escreval("Opção Invalida")
+      fimescolha
+   ate opcao = 7
 Fimalgoritmo
