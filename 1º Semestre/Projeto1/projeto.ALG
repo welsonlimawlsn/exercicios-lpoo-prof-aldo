@@ -187,12 +187,12 @@ fimfuncao
 
 funcao ehBinario(numero: caractere): logico
 inicio
-   retorne minusc(copia(numero, compr(numero), compr(numero))) = "b"
+   retorne (minusc(copia(numero, compr(numero), 1)) = "b") e binarioEhValido(copia(numero, 1, compr(numero) - 1))
 fimfuncao
 
 funcao ehDecimal(numero: caractere): logico
 inicio
-   retorne minusc(copia(numero, compr(numero), compr(numero))) = "d"
+   retorne minusc(copia(numero, compr(numero), 1)) = "d"
 fimfuncao
 
 funcao converteNumeroParaMorse (numero: caractere): caractere
@@ -246,6 +246,20 @@ inicio
       ii <- ii - 1
    fimenquanto
    retorne decimal
+fimfuncao
+
+funcao binarioEhValido(binario: caractere): logico
+var
+   i: inteiro
+   temNumeroSoBinario: logico
+inicio
+   temNumeroSoBinario <- verdadeiro
+   para i de 1 ate compr(binario) faca
+      se nao((copia(binario, i, 1) = "1") ou (copia(binario, i, 1) = "0")) entao
+         temNumeroSoBinario <- falso
+      fimse
+   fimpara
+   retorne temNumeroSoBinario
 fimfuncao
 
 Inicio
