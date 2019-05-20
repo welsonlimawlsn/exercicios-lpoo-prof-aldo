@@ -1,4 +1,4 @@
-package br.com.welson.listaquatro;
+package br.com.welson.listacinco;
 
 public class Cliente {
 
@@ -47,5 +47,15 @@ public class Cliente {
 
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nomeCompleto='" + nomeCompleto + '\'' +
+                ", rg='" + rg + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", endereco=" + endereco +
+                '}';
     }
 }

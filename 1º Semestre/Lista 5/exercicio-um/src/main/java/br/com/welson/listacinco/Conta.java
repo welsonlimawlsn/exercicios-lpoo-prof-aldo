@@ -1,4 +1,4 @@
-package br.com.welson.listaquatro;
+package br.com.welson.listacinco;
 
 public class Conta {
 
@@ -10,6 +10,7 @@ public class Conta {
 
     public static final int CONTA_CORRENTE = 0;
     public static final int CONTA_POUPANCA = 1;
+    private static final String[] TIPO_CONTA_STRING_VALUE = new String[]{"Conta corrente", "Conta Poupança"};
 
     public Conta() {
     }
@@ -75,5 +76,16 @@ public class Conta {
 
     public void setTipoConta(int tipoConta) {
         this.tipoConta = tipoConta;
+    }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "cliente=" + cliente +
+                ", numeroConta='" + numeroConta + '\'' +
+                ", numeroAgencia='" + numeroAgencia + '\'' +
+                ", saldo=" + saldo +
+                ", tipoConta=" + TIPO_CONTA_STRING_VALUE[tipoConta] +
+                '}';
     }
 }
