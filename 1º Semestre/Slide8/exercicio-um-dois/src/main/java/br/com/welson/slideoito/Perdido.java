@@ -1,21 +1,21 @@
 package br.com.welson.slideoito;
 
 public class Perdido {
-    private int codigoPedido;
+    private String codigoPedido;
     private String nomeCliente;
     private String descricaoPedido;
 
-    public Perdido(int codigoPedido, String nomeCliente, String descricaoPedido) {
+    public Perdido(String codigoPedido, String nomeCliente, String descricaoPedido) {
         this.codigoPedido = codigoPedido;
         this.nomeCliente = nomeCliente;
         this.descricaoPedido = descricaoPedido;
     }
 
-    public int getCodigoPedido() {
+    public String getCodigoPedido() {
         return codigoPedido;
     }
 
-    public void setCodigoPedido(int codigoPedido) {
+    public void setCodigoPedido(String codigoPedido) {
         this.codigoPedido = codigoPedido;
     }
 
